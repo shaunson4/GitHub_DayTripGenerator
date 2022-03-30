@@ -1,5 +1,5 @@
 import random
-from tkinter import N
+
 
 destinations = ['St.Louis', 'Chicago', 'Milwaukee', 'Detroit']
 
@@ -47,8 +47,13 @@ def select_activity():
         print('Awesome! Glad that you approve of the entertainment chosen. Let\'s summarize')
         return activity1
 
-
-
+def confirm_completion():
+        complete = input('Congratulations! We you have approved selections in all 4 categories of Day trip and it is now complete. Would you agree to said completion: Enter y/n: ')
+        if complete == 'y':
+            print('Thanks for your confirmation of completion! Now, we will display your Day Trip Itinerary below.')
+        else:
+            print('Ok, No Problem we can restart the Day Trip Generator for your approved selections!')
+            main_itinerary()
 
 
 def main_itinerary():
@@ -58,8 +63,8 @@ def main_itinerary():
     transport1 = select_transport()
     activity1 = select_activity()
 
-    print('Congratulations! We have completed generating the itinerary for your Day trip. Now let\'s just confirm this is the trip you wanted.')
-
+    confirm_completion()
+    
     print('The trip we have generated for you is as follows: ')
 
     print(f'Trip Destination: {dest} ')
